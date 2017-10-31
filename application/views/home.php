@@ -60,6 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        <div class="row">
           <div class="col-md-12">
             <?php print_r($this->session->all_userdata()); ?>
+            <?php echo $this->input->server('REQUEST_URI'); ?>
           </div>
        </div> 
     </section>

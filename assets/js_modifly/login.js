@@ -9,7 +9,7 @@ function login(e) {
 	$('#loginicon').show();
 	$.ajax({
 		type: "POST",
-		url: "Welcome/login_controller",
+		url: "index.php/Welcome/Login",
 		data: datasrting,
 		cache: false,
 		success: function(result){
@@ -17,11 +17,12 @@ function login(e) {
 			setTimeout("window.location.href = 'Home';", 1500);
 		}
 		if (result == 0) {
-			setTimeout(function(){
 			document.getElementById("formlogin").reset();
 			$('#username').focus();
 			$('#loginicon').hide();	
-		    }, 1500);
+			alertify.defaults.theme.ok = "btn btn-primary";
+			alertify.defaults.theme.cancel = "btn btn-danger";
+			alertify.alert('แจ้งเตือน', 'Username หรือ Password ไม่ถูกต้อง');
 		}
 	}
 	});	
@@ -29,13 +30,15 @@ function login(e) {
 
 $('#login').click(function(e) {
 	if (document.formlogin.username.value =='') {
-		alert('กรุณากรอก Username');
-		document.formlogin.username.focus();
+		alertify.defaults.theme.ok = "btn btn-danger";
+		alertify.defaults.theme.cancel = "btn btn-danger";
+		alertify.alert('แจ้งเตือน', 'กรุณากรอก Username');
 		return false;
 	}
 	else if (document.formlogin.password.value =='') {
-		alert('กรุณากรอก Password');
-		document.formlogin.password.focus();
+		alertify.defaults.theme.ok = "btn btn-danger";
+		alertify.defaults.theme.cancel = "btn btn-danger";
+		alertify.alert('แจ้งเตือน', 'กรุณากรอก Password');
 		return false;
 	}else{
 	login(e);
@@ -44,13 +47,15 @@ $('#login').click(function(e) {
 $(document).keypress(function(e) { 
     if (e.keyCode == 13) { 
     	if (document.formlogin.username.value =='') {
-		alert('กรุณากรอก Username');
-		document.formlogin.username.focus();
+		alertify.defaults.theme.ok = "btn btn-danger";
+		alertify.defaults.theme.cancel = "btn btn-danger";
+		alertify.alert('แจ้งเตือน', 'กรุณากรอก Username');
 		return false;
 	}
 	else if (document.formlogin.password.value =='') {
-		alert('กรุณากรอก Password');
-		document.formlogin.password.focus();
+		alertify.defaults.theme.ok = "btn btn-danger";
+		alertify.defaults.theme.cancel = "btn btn-danger";
+		alertify.alert('แจ้งเตือน', 'กรุณากรอก Password');
 		return false;
 	}
 	else{

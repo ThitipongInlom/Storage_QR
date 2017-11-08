@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['Login'] = 'Welcome/index';
 $route['Home'] = 'Home/index';
+$route['Generate'] = 'generate/print_qr';

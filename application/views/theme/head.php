@@ -168,8 +168,8 @@ if (empty($this->session->user_id)) {
             </span></a>
           <ul class="treeview-menu">
             <li class="<?php 
-            if($this->input->server('REQUEST_URI') == '/Leave') 
-            {echo 'active';}?>"><a href="<?php echo site_url('Leave'); ?>"><i class="fa fa-file-o"></i> สร้าง QR Code</a></li>
+            if($this->input->server('REQUEST_URI') == '/Generate') 
+            {echo 'active';}?>"><a href="<?php echo site_url('Generate'); ?>"><i class="fa fa-file-o"></i> สร้าง QR Code</a></li>
           </ul>  
         </li>
       </ul>

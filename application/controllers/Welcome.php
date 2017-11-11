@@ -27,4 +27,10 @@ class Welcome extends CI_Controller {
 			echo '1';
 		}
 	}
-}
+
+	public function Logout()
+	{
+			$this->session_user->unset_session();
+			echo 'OK';
+	}
+}	

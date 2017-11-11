@@ -54,4 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['Login'] = 'Welcome/index';
 $route['Home'] = 'Home/index';
+$route['GenItem'] = 'Gencode/index';
+$route['raedItem/(:num)'] = 'Gencode/raedcode/$1';
 $route['Generate'] = 'generate/print_qr';

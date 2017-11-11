@@ -7,25 +7,27 @@ class Generate extends CI_Controller {
 	{
 		parent::__construct();
 	    $this->load->library('ciqrcode');
+	    $this->load->model('Generate_model');
 		
 	}
 
 	public function print_qr()
 	{
+		$result = $this->Generate_model->saveadd_item();
+		$qrcodeid = md5($result);
 		$config['cacheable']	= true; //boolean, the default is true
 		$config['quality']		= true; //boolean, the default is true
 		$config['size']			= '1024'; //interger, the default is 1024
 		$config['black']		= array(224,255,255); // array, default is array(255,255,255)
 		$config['white']		= array(70,130,180); // array, default is array(0,0,0)
 		$this->ciqrcode->initialize($config);
-
-		$params['data'] = 'This is a text to encode become QR Code';
+		$params['data'] = $result;
 		$params['level'] = 'H';
 		$params['size'] = 10;
-		$params['savename'] = FCPATH.'img_qr/'.'rr.png';
+		$nameqr = '123';
+		$params['savename'] = FCPATH.'img_qr/'.$qrcodeid.'.png';
+		$this->Generate_model->savename_item($result);
 		$this->ciqrcode->generate($params);
-		echo base_url();
-		echo '<img src="'.base_url().'img_qr/'.'rr.png" />';
 	}
 
 }

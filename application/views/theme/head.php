@@ -159,7 +159,7 @@ if (empty($this->session->user_id)) {
         </li>
         <li class="treeview <?php 
             if(
-              $this->input->server('REQUEST_URI') == '/Leave'
+              $this->input->server('REQUEST_URI') == '/GenItem'
             ){echo 'active';}?>">
           <a href="#">
             <i class="fa fa-folder-open"></i> <span>สร้าง</span>
@@ -168,8 +168,11 @@ if (empty($this->session->user_id)) {
             </span></a>
           <ul class="treeview-menu">
             <li class="<?php 
-            if($this->input->server('REQUEST_URI') == '/Generate') 
-            {echo 'active';}?>"><a href="<?php echo site_url('Generate'); ?>"><i class="fa fa-file-o"></i> สร้าง QR Code</a></li>
+            if($this->input->server('REQUEST_URI') == '/GenItem') 
+            {echo 'active';}?>"><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> เพิ่มสินค้า</a></li>
+            <li class="<?php 
+            if($this->input->server('REQUEST_URI') == "/raedItem") 
+            {echo 'active';}?>"><a href="<?php echo site_url('raedItem/0'); ?>"><i class="fa fa-search"></i> ดูสินค้า</a></li>
           </ul>  
         </li>
       </ul>
@@ -200,13 +203,13 @@ if (empty($this->session->user_id)) {
           </div>
           <!-- /.modal-dialog -->
 </div>
-
 <!-- jQuery 3 -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/jquery/dist/jquery.min.js'; ?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js'; ?>"></script>
-
 <!-- AdminLTE App -->
 <script src="<?php echo base_url().'assets/adminlte/dist/js/adminlte.min.js'; ?>"></script>
+<!-- JS Logout -->
+<script src="<?php echo base_url().'/assets/js_modifly/logout.js'; ?>"></script>
 </body>
 </html>

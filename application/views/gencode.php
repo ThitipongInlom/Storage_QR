@@ -33,6 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- QR Code CAMARA  -->
+  <script src="<?php echo base_url().'/assets/camara/result.js'; ?>"></script>
+  <script src="<?php echo base_url().'/assets/camara/instascan.min.js'; ?>"></script>
 </head>
 <body>
   <div class="content-wrapper">
@@ -61,10 +64,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </button>
               </div>
             </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+          <div class="box box-info box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">ค้นหาสินค้า QR Code</h3>
+            </div>
+            <div class="box-body">
+              <div align="center">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-qrcode" id="qrcodeopen">
+                QR Code
+              </button>
+              </div>
+            </div>
+          </div>
         </div>
+
          <div class="col-md-9">
           <div class="box box-success box-solid">
             <div class="box-header with-border">
@@ -143,7 +157,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
           </div>
-        </div>
+</div>
+
+<!-- model QR-Code -->
+<div class="modal fade" id="modal-qrcode">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">QR Code Scan <i class="fa  fa-video-camera" style="padding-left: 2px;"></i></h4>
+              </div>
+              <div class="modal-body">
+                <div class="box box-info box-solid">
+                  <div class="box-header with-border">
+                    <h4 style="color: black;">Camera QR Code <i class="fa fa-refresh fa-spin fa-fw" style="margin-right: 2px;"></i></h4>
+                  </div>
+                  <div class="box-body" >
+                    <div class="embed-responsive embed-responsive-16by9">
+                    <video id="preview" ></video>
+                    </div>
+                    <hr>
+                    <div align="center">Hi</div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" id="dis" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+</div>
+<!-- JS QRCode  -->
+<script src="<?php echo base_url().'/assets/js_modifly/qrcode.js'; ?>"></script>
 <!-- JS Additem -->
 <script src="<?php echo base_url().'/assets/js_modifly/additem.js'; ?>"></script>
 <!-- DataTables -->

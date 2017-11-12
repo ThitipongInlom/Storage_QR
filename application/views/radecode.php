@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        เพิ่มสินค้าเข้าสต้อก
+        ค้นหา QR Code
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -57,13 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
-       
-       <div class="row">
-          <div class="col-md-12">
-            <?php print_r($this->session->all_userdata()); ?>
-            <?php echo $this->input->server('REQUEST_URI'); ?>
-          </div>
-       </div> 
+
     </section>
   <!-- /.content-wrapper -->
   </div>

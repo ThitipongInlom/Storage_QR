@@ -183,7 +183,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" id="dis" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default pull-left" id="dis" data-dismiss="modal" id="close_qrcode">Close</button>
               </div>
             </div>
           </div>

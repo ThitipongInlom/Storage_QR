@@ -170,9 +170,6 @@ if (empty($this->session->user_id)) {
             <li class="<?php 
             if($this->input->server('REQUEST_URI') == '/GenItem') 
             {echo 'active';}?>"><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> เพิ่มสินค้า</a></li>
-            <li class="<?php 
-            if($this->input->server('REQUEST_URI') == "/raedItem") 
-            {echo 'active';}?>"><a href="<?php echo site_url('raedItem/0'); ?>"><i class="fa fa-search"></i> ดูสินค้า</a></li>
           </ul>  
         </li>
       </ul>

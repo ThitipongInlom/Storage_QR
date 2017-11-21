@@ -37,6 +37,14 @@ class Generate_model extends CI_Model {
 		return $result;
 	}
 
+	public function view_item($id)
+	{
+		$query = $this->db->get_where('item', array(
+			'item_id' => $id));
+		$result = $query->result();
+		return $result;
+	}
+
 }
 
 /* End of file Generate_model.php */

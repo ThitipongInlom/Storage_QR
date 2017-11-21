@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
-
+      <?php print_r($item_data); ?>
     </section>
   <!-- /.content-wrapper -->
   </div>

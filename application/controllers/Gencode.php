@@ -21,8 +21,10 @@ class Gencode extends CI_Controller {
 
 	public function raedcode($id)
 	{
+		$item = $this->Generate_model->view_item($id);
 		$data = array(
-        'pageid' => $id);
+        'pageid' => $id,
+    	'item_data' => $item);
 		$this->load->view('theme/head');
 		$this->load->view('radecode', $data);
 		$this->load->view('theme/footer');

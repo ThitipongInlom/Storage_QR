@@ -62,40 +62,16 @@ if (empty($this->session->user_id)) {
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning" id="num_alert"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">คุณมีการแจ้งเตือนทั้งหมด<span id="num_alert2" style="padding-left: 2px; padding-right: 2px;"></span>การแจ้งเตือน</li>
               <li>
                 <!-- inner menu: contains the actual data -->
+                <div id="ceremenu">
                 <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
                 </ul>
+                </div>
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
@@ -107,10 +83,7 @@ if (empty($this->session->user_id)) {
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
+                <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -177,9 +150,8 @@ if (empty($this->session->user_id)) {
     <!-- /.sidebar -->
   </aside>
 
+
   <!-- =============================================== -->
-
-
 <div class="modal fade" id="modal-default" style="display: none;">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -208,5 +180,7 @@ if (empty($this->session->user_id)) {
 <script src="<?php echo base_url().'assets/adminlte/dist/js/adminlte.min.js'; ?>"></script>
 <!-- JS Logout -->
 <script src="<?php echo base_url().'/assets/js_modifly/logout.js'; ?>"></script>
+<!-- JS Alert Load -->
+<script type="text/javascript" src="<?php echo base_url().'/assets/js_modifly/alert_load.js'; ?>"></script>
 </body>
 </html>

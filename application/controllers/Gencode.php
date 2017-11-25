@@ -9,8 +9,15 @@ class Gencode extends CI_Controller {
 		$this->load->model('Generate_model');
 	}
 
+	public function alert_get()
+	{
+		$result = $this->Generate_model->getall_alert();
+		echo json_encode($result);
+	}
+
 	public function index()
 	{
+		
 		$itemall = $this->Generate_model->getitem_all();
 		$data = array(
 			'item_all' => $itemall);

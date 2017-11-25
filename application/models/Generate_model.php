@@ -16,9 +16,10 @@ class Generate_model extends CI_Model {
 		{
 		$sql = array(
 			'alert_detail' => "เพิ่มสินค้าใหม่ $nameitemadd",
-			'alert_username' => $row->user_username,
+			'alert_username' => $row->user_id,
 			'alert_status' => 'N',
-			'alert_icon' => 'fa fa-archive');
+			'alert_icon' => 'fa fa-archive',
+			'alert_color' => 'text-green');
 		$this->db->insert('alert', $sql);
 		}
 		return;
@@ -56,9 +57,14 @@ class Generate_model extends CI_Model {
 
 	public function getall_alert()
 	{
-		$query = $this->db->get('alert');
+		$id = $this->input->post('id_alert');
+		$query = $this->db->get_where('alert', array('alert_username' => $id, 'alert_status'=>'N'));
 		$result = $query->result();
-		return $result;
+		$num = $query->num_rows();
+		$obj = array(
+			'result' => $result, 
+			'num' => $num);
+		return $obj;
 	}
 
 	public function view_item($id)

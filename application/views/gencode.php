@@ -203,6 +203,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript">
   $('#gropitem').DataTable({
     "responsive": true,
+    "order":[[1,'desc']],
     "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]]
   })
 </script>

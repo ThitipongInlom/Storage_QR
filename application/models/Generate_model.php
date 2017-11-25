@@ -9,14 +9,31 @@ class Generate_model extends CI_Model {
 		
 	}
 
+	public function Gropalert($nameitemadd)
+	{
+		$query = $this->db->get('user');
+		foreach ($query->result() as $row)
+		{
+		$sql = array(
+			'alert_detail' => "เพิ่มสินค้าใหม่ $nameitemadd",
+			'alert_username' => $row->user_username,
+			'alert_status' => 'N',
+			'alert_icon' => 'fa fa-archive');
+		$this->db->insert('alert', $sql);
+		}
+		return;
+	}
+
 	public function saveadd_item()
 	{
+		$nameitemadd = $this->input->post('name');
+		$this->Gropalert($nameitemadd);
 		$sql  = array(
 			'item_name' => $this->input->post('name'),
 			'item_mac'  => $this->input->post('mac'));
 		$this->db->insert('item', $sql);
-		$insert_id = $this->db->insert_id();
-		return  $insert_id;
+		$item_id = $this->db->insert_id();
+		return  $item_id;
 	}
 
 	public function savename_item($id)
@@ -33,6 +50,13 @@ class Generate_model extends CI_Model {
 	public function getitem_all()
 	{
 		$query = $this->db->get('item');
+		$result = $query->result();
+		return $result;
+	}
+
+	public function getall_alert()
+	{
+		$query = $this->db->get('alert');
 		$result = $query->result();
 		return $result;
 	}

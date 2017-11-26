@@ -35,6 +35,7 @@ if (empty($this->session->user_id)) {
 
 </head>
 <body class="hold-transition skin-purple fixed sidebar-mini">
+<input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -83,7 +84,8 @@ if (empty($this->session->user_id)) {
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
+  
+  
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">

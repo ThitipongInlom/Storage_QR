@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2017 at 11:22 AM
+-- Generation Time: Nov 26, 2017 at 04:46 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -25,6 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `alert`
+--
+
+CREATE TABLE `alert` (
+  `alert_id` int(8) NOT NULL,
+  `alert_detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_icon` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_color` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `alert`
+--
+
+INSERT INTO `alert` (`alert_id`, `alert_detail`, `alert_username`, `alert_status`, `alert_icon`, `alert_color`) VALUES
+(7, 'เพิ่มสินค้าใหม่ ทดสอบ Alert1', '1', 'N', 'fa fa-archive', 'text-green'),
+(8, 'เพิ่มสินค้าใหม่ ทดสอบ Alert1', '2', 'N', 'fa fa-archive', 'text-green'),
+(9, 'เพิ่มสินค้าใหม่ ทดสอบสินค้า2', '1', 'N', 'fa fa-archive', 'text-green'),
+(10, 'เพิ่มสินค้าใหม่ ทดสอบสินค้า2', '2', 'N', 'fa fa-archive', 'text-green');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `item`
 --
 
@@ -40,13 +65,8 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `item_name`, `item_mac`, `item_imgname`) VALUES
-(5, 'Test', 'Test', 'e4da3b7fbbce2345d7772b0674a318d5.png'),
-(6, '123', '123', '1679091c5a880faf6fb5e6087eb1b2dc.png'),
-(7, '^^', '66', '8f14e45fceea167a5a36dedd4bea2543.png'),
-(8, 'asd', 'ads', 'c9f0f895fb98ab9159f51fd0297e236d.png'),
-(9, '123', '3', '45c48cce2e2d7fbdea1afc51c7c6ad26.png'),
-(10, '123', '32', 'd3d9446802a44259755d38e6d163e820.png'),
-(11, '32', '32', '6512bd43d9caa6e02c990b0a82652dca.png');
+(4, 'ทดสอบ Alert1', 'ทดสอบ Alert1', 'a87ff679a2f3e71d9181a67b7542122c.png'),
+(5, 'ทดสอบสินค้า2', 'ทดสอบสินค้า2', 'e4da3b7fbbce2345d7772b0674a318d5.png');
 
 -- --------------------------------------------------------
 
@@ -65,11 +85,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_username`, `user_password`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 'admin2', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `alert`
+--
+ALTER TABLE `alert`
+  ADD PRIMARY KEY (`alert_id`);
 
 --
 -- Indexes for table `item`
@@ -88,16 +115,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `alert`
+--
+ALTER TABLE `alert`
+  MODIFY `alert_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `item_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

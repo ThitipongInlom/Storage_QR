@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2017 at 04:46 AM
+-- Generation Time: Nov 27, 2017 at 02:30 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -34,18 +34,19 @@ CREATE TABLE `alert` (
   `alert_username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `alert_status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `alert_icon` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `alert_color` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `alert_color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_item_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `alert`
 --
 
-INSERT INTO `alert` (`alert_id`, `alert_detail`, `alert_username`, `alert_status`, `alert_icon`, `alert_color`) VALUES
-(7, 'เพิ่มสินค้าใหม่ ทดสอบ Alert1', '1', 'N', 'fa fa-archive', 'text-green'),
-(8, 'เพิ่มสินค้าใหม่ ทดสอบ Alert1', '2', 'N', 'fa fa-archive', 'text-green'),
-(9, 'เพิ่มสินค้าใหม่ ทดสอบสินค้า2', '1', 'N', 'fa fa-archive', 'text-green'),
-(10, 'เพิ่มสินค้าใหม่ ทดสอบสินค้า2', '2', 'N', 'fa fa-archive', 'text-green');
+INSERT INTO `alert` (`alert_id`, `alert_detail`, `alert_username`, `alert_status`, `alert_icon`, `alert_color`, `alert_item_id`) VALUES
+(13, 'เพิ่มสินค้าใหม่ ทดสอบ1', '1', 'N', 'fa fa-archive', 'text-green', '7'),
+(14, 'เพิ่มสินค้าใหม่ ทดสอบ1', '2', 'N', 'fa fa-archive', 'text-green', '7'),
+(15, 'เพิ่มสินค้าใหม่ ทดสอบ2', '1', 'D', 'fa fa-archive', 'text-green', '8'),
+(16, 'เพิ่มสินค้าใหม่ ทดสอบ2', '2', 'N', 'fa fa-archive', 'text-green', '8');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,26 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `item_name`, `item_mac`, `item_imgname`) VALUES
-(4, 'ทดสอบ Alert1', 'ทดสอบ Alert1', 'a87ff679a2f3e71d9181a67b7542122c.png'),
-(5, 'ทดสอบสินค้า2', 'ทดสอบสินค้า2', 'e4da3b7fbbce2345d7772b0674a318d5.png');
+(7, 'ทดสอบ1', '', '8f14e45fceea167a5a36dedd4bea2543.png'),
+(8, 'ทดสอบ2', 'ทดสอบ2', 'c9f0f895fb98ab9159f51fd0297e236d.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `typeitem`
+--
+
+CREATE TABLE `typeitem` (
+  `typeitem_id` int(8) NOT NULL,
+  `typeitem_data` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `typeitem`
+--
+
+INSERT INTO `typeitem` (`typeitem_id`, `typeitem_data`) VALUES
+(1, 'ทดสอบเมนู1');
 
 -- --------------------------------------------------------
 
@@ -105,6 +124,12 @@ ALTER TABLE `item`
   ADD PRIMARY KEY (`item_id`);
 
 --
+-- Indexes for table `typeitem`
+--
+ALTER TABLE `typeitem`
+  ADD PRIMARY KEY (`typeitem_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -118,13 +143,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `alert`
 --
 ALTER TABLE `alert`
-  MODIFY `alert_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `alert_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `item_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `typeitem`
+--
+ALTER TABLE `typeitem`
+  MODIFY `typeitem_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

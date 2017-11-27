@@ -28,6 +28,7 @@ class Gencode extends CI_Controller {
 
 	public function raedcode($id)
 	{
+		$this->Generate_model->set_raedalert($id);
 		$item = $this->Generate_model->view_item($id);
 		$data = array(
         'pageid' => $id,

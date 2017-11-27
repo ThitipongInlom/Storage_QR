@@ -9,7 +9,7 @@ class Generate_model extends CI_Model {
 		
 	}
 
-	public function Gropalert($nameitemadd)
+	public function Gropalert($nameitemadd,$item_id)
 	{
 		$query = $this->db->get('user');
 		foreach ($query->result() as $row)
@@ -19,7 +19,8 @@ class Generate_model extends CI_Model {
 			'alert_username' => $row->user_id,
 			'alert_status' => 'N',
 			'alert_icon' => 'fa fa-archive',
-			'alert_color' => 'text-green');
+			'alert_color' => 'text-green',
+			'alert_item_id'=> $item_id);
 		$this->db->insert('alert', $sql);
 		}
 		return;
@@ -28,12 +29,12 @@ class Generate_model extends CI_Model {
 	public function saveadd_item()
 	{
 		$nameitemadd = $this->input->post('name');
-		$this->Gropalert($nameitemadd);
 		$sql  = array(
 			'item_name' => $this->input->post('name'),
 			'item_mac'  => $this->input->post('mac'));
 		$this->db->insert('item', $sql);
 		$item_id = $this->db->insert_id();
+		$this->Gropalert($nameitemadd,$item_id);
 		return  $item_id;
 	}
 
@@ -73,6 +74,17 @@ class Generate_model extends CI_Model {
 			'item_id' => $id));
 		$result = $query->result();
 		return $result;
+	}
+
+	public function set_raedalert($id)
+	{
+		$data = array(
+        'alert_status' => 'D');
+        $user = $this->session->user_id;
+		$this->db->where('alert_item_id', $id);
+		$this->db->where('alert_username', $user);
+		$this->db->update('alert', $data);
+		return;
 	}
 
 }

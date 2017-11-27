@@ -42,8 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ค้นหา QR Code
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> GenItem</a></li>
+        <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> เพิ่มสินค้า</a></li>
       </ol>
     </section>
     <!-- Main content -->

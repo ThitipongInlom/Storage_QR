@@ -1,5 +1,6 @@
 var id_alert = document.getElementById('id_alert').value;
   $.ajax({
+    url: '../../Storage_QR/index.php/Gencode/alert_get',
     type: 'POST',
     data: {id_alert: id_alert},
     cache: false,
@@ -16,6 +17,7 @@ var id_alert = document.getElementById('id_alert').value;
 var ajax_call = function() {
 	var id_alert = document.getElementById('id_alert').value;
   $.ajax({
+    url: '../../Storage_QR/index.php/Gencode/alert_get',
   	type: 'POST',
   	data: {id_alert: id_alert},
   	cache: false,

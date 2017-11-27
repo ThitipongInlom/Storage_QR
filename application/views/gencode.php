@@ -199,7 +199,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'; ?>"></script>
 <script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js" type="text/javascript" charset="utf-8" ></script>
 <!-- Select2 -->
-<script src="<?php echo base_url().'/assets/adminlte//bower_components/select2/dist/js/select2.full.min.js';?>"></script>
+<script src="<?php echo base_url().'/assets/adminlte/bower_components/select2/dist/js/select2.full.min.js';?>"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'; ?>"></script>
 <!-- FastClick -->

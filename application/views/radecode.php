@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body>
+  <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -57,6 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
+      <?php print_r($_SESSION); ?>
       <?php print_r($item_data); ?>
     </section>
   <!-- /.content-wrapper -->

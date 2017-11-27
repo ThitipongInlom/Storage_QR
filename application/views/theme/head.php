@@ -35,6 +35,7 @@ if (empty($this->session->user_id)) {
 
 </head>
 <body class="hold-transition skin-purple fixed sidebar-mini">
+<input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
 <!-- Site wrapper -->
 <div class="wrapper">
   <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
@@ -81,8 +82,7 @@ if (empty($this->session->user_id)) {
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-gears"></i>
             </a>
-            <ul class="dropdown-menu" style="right: 0;">
-              <li>
+
                   <a href="<?php echo site_url('Profile'); ?>">
                   <button type="button" class="btn btn-primary btn-flat btn-block" >โปรไฟล์</button>
                   </a>

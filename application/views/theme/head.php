@@ -38,6 +38,7 @@ if (empty($this->session->user_id)) {
 <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
 <!-- Site wrapper -->
 <div class="wrapper">
+  <input type="hidden" id="id_alert" value="<?php echo $this->session->user_id; ?>">
 
   <header class="main-header">
     <!-- Logo -->
@@ -77,26 +78,19 @@ if (empty($this->session->user_id)) {
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-gears"></i>
             </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-  
-  
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
+
                   <a href="<?php echo site_url('Profile'); ?>">
                   <button type="button" class="btn btn-primary btn-flat btn-block" >โปรไฟล์</button>
                   </a>
-                </div>
-                <div class="pull-right">
-                  <button type="button" class="btn btn-danger btn-flat btn-block" data-toggle="modal" data-target="#modal-default">ออกจากระบบ</button>
-                </div>
+              </li>
+              <li>
+                  <a data-toggle="modal" data-target="#modal-default">  
+                  <button type="button" class="btn btn-danger btn-flat btn-block">ออกจากระบบ</button>
+                  </a>
               </li>
             </ul>
           </li>
@@ -178,6 +172,8 @@ if (empty($this->session->user_id)) {
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/jquery/dist/jquery.min.js'; ?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js'; ?>"></script>
+<!-- Slimscroll -->
+<script src="<?php echo base_url().'/assets/adminlte//bower_components/jquery-slimscroll/jquery.slimscroll.min.js'; ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url().'assets/adminlte/dist/js/adminlte.min.js'; ?>"></script>
 <!-- JS Logout -->

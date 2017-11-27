@@ -47,8 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         เพิ่มสินค้าเข้าสต้อก
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> GenItem</a></li>
+        <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url('GenItem'); ?>"><i class="fa fa-plus-circle"></i> เพิ่มสินค้า</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="box-body">
               <div align="center">
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-additem">
-                เพิ่มสินค้า
+                เพิ่มสินค้าแบบเดี่ยว
               </button>
               </div>
             </div>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
 
-         <div class="col-md-9">
+         <div class="col-md-9 col-xs-12">
           <div class="box box-success box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">สินค้าทั้งหมด</h3>
@@ -133,19 +133,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">กรอกข้อมูลสินค้าเข้าสต้อก</h4>
+                <h4 class="modal-title">กรอกข้อมูลสินค้าเข้าสต้อกแบบเดี่ยว</h4>
               </div>
               <div class="modal-body">
-                <div class="box box-info">
-                  <div class="box-header with-border">
-                    <div class="box-tools pull-right">
-                    </div>
-                  </div>
-                  <div class="box-body" style="">
+                    <div class="row">
+                    <div class="col-md-6 col-xs-6">  
                     <div class="form-group">
                       <label for="nameitem">ชื่อสินค้า</label>
                       <input type="text" class="form-control" id="nameitem" placeholder="ชื่อสินค้า">
                     </div>
+                    <div class="form-group">
+                      <label for="nameitem">ชื่อสินค้า</label>
+                      <input type="text" class="form-control" id="nameitem2" placeholder="ชื่อสินค้า">
+                    </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
                     <div class="form-group">
                       <label for="macitem">Mac</label>
                       <input type="text" class="form-control" id="macitem" placeholder="Mac">
@@ -154,8 +156,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" id="dis" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveiteamadd">Save changes <i class="fa fa-refresh fa-spin fa-fw" id="saveitem" style="margin-right: 2px;"></i></button>
+                <button type="button" class="btn btn-danger pull-left" id="dis" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn btn-primary" id="saveiteamadd">บันทึก<i class="fa fa-refresh fa-spin fa-fw" id="saveitem" style="margin-right: 2px;"></i></button>
               </div>
             </div>
           </div>
@@ -179,13 +181,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="embed-responsive embed-responsive-16by9">
                     <video id="preview" ></video>
                     </div>
-                    <hr>
-                    <div align="center">Hi</div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" id="dis" data-dismiss="modal" id="close_qrcode">Close</button>
+                <button type="button" class="btn btn-danger pull-left" id="dis" data-dismiss="modal" id="close_qrcode">ยกเลิก</button>
               </div>
             </div>
           </div>

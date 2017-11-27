@@ -57,3 +57,4 @@ $route['Home'] = 'Home/index';
 $route['GenItem'] = 'Gencode/index';
 $route['raedItem/(:num)'] = 'Gencode/raedcode/$1';
 $route['Generate'] = 'generate/print_qr';
+$route['AddType'] = 'Addtype/index';

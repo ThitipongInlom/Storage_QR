@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section class="content">
       <div class="row">
         <div class="col-md-3">
-          <div class="box box-info box-solid">
+          <div class="box box-primary box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">เพิ่มสินค้า</h3>
             </div>
@@ -67,13 +67,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
           </div>
-          <div class="box box-info box-solid">
+          <div class="box box-primary box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">ค้นหาสินค้า QR Code</h3>
             </div>
             <div class="box-body">
               <div align="center">
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-qrcode" id="qrcodeopen">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-qrcode" id="qrcodeopen">
                 QR Code
               </button>
               </div>

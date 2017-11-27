@@ -84,7 +84,6 @@ if (empty($this->session->user_id)) {
             </a>
              <ul class="dropdown-menu" style="right: 0;">
                <li>
-
                   <a href="<?php echo site_url('Profile'); ?>">
                   <button type="button" class="btn btn-primary btn-flat btn-block" >โปรไฟล์</button>
                   </a>
@@ -114,7 +113,7 @@ if (empty($this->session->user_id)) {
         <li class="treeview <?php 
             if(
               $this->input->server('REQUEST_URI') == '/Home' ||
-              $this->input->server('REQUEST_URI') == '/Profile'
+              $this->input->server('REQUEST_URI') == '/AddType'
             ){echo 'active';}?>">
           <a href="#">
             <i class="fa fa-cog"></i> <span>ระบบ</span>
@@ -126,6 +125,9 @@ if (empty($this->session->user_id)) {
             <li class="<?php 
             if($this->input->server('REQUEST_URI') == '/Home') 
             {echo 'active';}?>"><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-dashboard"></i> หน้าหลัก</a></li>
+          <li class="<?php 
+            if($this->input->server('REQUEST_URI') == '/AddType') 
+            {echo 'active';}?>"><a href="<?php echo site_url('AddType'); ?>"><i class="fa fa-plus"></i> เพิ่มประเภทสินค้า</a></li>
           </ul>
         </li>
         <li class="treeview <?php 

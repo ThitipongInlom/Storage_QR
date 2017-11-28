@@ -52,7 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section class="content">   
        <div class="row">
         <div class="col-md-4">
-
+          <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">เพิ่มเมนูสินค้า</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div align="center">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-additem">เพิ่ม</button>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
         </div>
         <div class="col-md-8">
           <div class="box box-primary">
@@ -61,26 +72,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <div class="box-body" id="table_loadoverlay">
-              <table class="table table-hover">
+              <table class="table table-hover" id="table_table">
                 <tr>
                   <th>ID</th>
                   <th>ชื่อประเภทสินค้า</th>
-                </tr>
-                <tr>
-                  <td>183</td>
-                  <td>John Doe</td>
-                </tr>
-                <tr>
-                  <td>219</td>
-                  <td>Alexander Pierce</td>
-                </tr>
-                <tr>
-                  <td>657</td>
-                  <td>Bob Doe</td>
-                </tr>
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
                 </tr>
               </table>
             </div>  
@@ -93,6 +88,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section>
   <!-- /.content-wrapper -->
   </div>
+<!-- model add-item -->
+<div class="modal fade" id="modal-additem">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">กรอกเมนูประเภทที่ต้องการเพิ่ม</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="typeitem_data">เมนูประเภท</label>
+                    <input type="text" name="typeitem_data" id="typeitem_data" class="form-control" placeholder="เมนูประเภท">
+                  </div>  
+                </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger pull-left" id="dis" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn btn-primary" id="savetypeadd">บันทึก<i class="fa fa-refresh fa-spin fa-fw" id="savetype" style="margin-right: 2px;"></i></button>
+              </div>
+            </div>
+          </div>
+</div>
 <!-- DataTables -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js'; ?>"></script>
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'; ?>"></script>
@@ -101,8 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'; ?>"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/fastclick/lib/fastclick.js'; ?>"></script>
-<!-- JS Alert Load -->
-<script type="text/javascript" src="<?php echo base_url().'/assets/js_modifly/alert_load.js'; ?>"></script>
-
+<!-- JS Addtype Load -->
+<script type="text/javascript" src="<?php echo base_url().'/assets/js_modifly/addtype.js'; ?>"></script>
 </body>
 </html>

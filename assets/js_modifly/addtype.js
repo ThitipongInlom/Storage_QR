@@ -45,6 +45,8 @@ $("#savetypeadd").click(function() {
       success: function (result) {
       $("#dis").click();  
       ajax_call();
+      $("#typeitem_data").val("");
+      $("#savetype").hide();
       $("#loadoverlaytable").hide(); 
       }
     });

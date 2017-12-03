@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- /.box-header -->
             <div class="box-body">
               <div align="center">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-additem">เพิ่ม</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-additem">เพิ่มเมนูประเภทสินค้า</button>
               </div>
             </div>
             <!-- /.box-body -->
@@ -72,11 +72,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <div class="box-body" id="table_loadoverlay">
-              <table class="table table-hover" id="table_table">
+              <table id="typeitem" class="table table-bordered table-striped table-hover">
+                <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>ชื่อประเภทสินค้า</th>
+                  <th>ID สินค้า</th>
+                  <th>ชื่อสินค้า</th>
                 </tr>
+                </thead>
+                <tbody >
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>ID สินค้า</th>
+                  <th>ชื่อสินค้า</th>
+                </tr>
+                </tfoot>
               </table>
             </div>  
               <div class="overlay" id="loadoverlaytable">
@@ -124,5 +134,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/fastclick/lib/fastclick.js'; ?>"></script>
 <!-- JS Addtype Load -->
 <script type="text/javascript" src="<?php echo base_url().'/assets/js_modifly/addtype.js'; ?>"></script>
+<script type="text/javascript">
+var table;
+$(document).ready(function() {
+    table = $('#typeitem').DataTable({ 
+        "processing": true, 
+        "serverSide": true, 
+        "responsive": true,
+        "language": {
+                "lengthMenu":"แสดง _MENU_ แถว",
+                "search":"ค้นหา:",
+                "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
+                "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
+                "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
+                "processing": "กำลังโหลดข้อมูล...",
+                "zeroRecords": "ไม่มีข้อมูล",
+                "paginate": {
+                      "first": "หน้าแรก",
+                      "last": "หน้าสุดท้าย",
+                      "next": "ต่อไป",
+                      "previous": "ย้อนกลับ"
+                  },
+        },
+        "order":[[1,'desc']],
+        "aLengthMenu": [[ 7, 10, 25, -1], [ 7, 10, 25, "ทั้งหมด"]],
+        "ajax": {
+            "url": "<?php echo site_url('Addtype/Get_itemtype')?>",
+            "type": "POST"
+        },
+        "columnDefs": [
+        { 
+            "targets": [ 0 ], 
+            "orderable": false, 
+        },
+        ],
+    });
+});
+</script>
 </body>
 </html>

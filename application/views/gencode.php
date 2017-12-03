@@ -82,12 +82,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
          <div class="col-md-9 col-xs-12">
-          <div class="box box-success box-solid">
+          <div class="box box-primary box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">สินค้าทั้งหมด</h3>
+              <h3 class="box-title">สินค้าใหม่ทั้งหมด</h3>
             </div>
-            <div class="box-body">
-             <table id="gropitem" class="table table-bordered table-striped">
+            <div class="box-body" id="gropitemtable">
+             <table id="gropitem" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
                   <th>ID สินค้า</th>
@@ -96,16 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>QRCode</th>
                 </tr>
                 </thead>
-                <tbody>
-                <?php foreach ($item_all as $row)
-                { ?>  
-                <tr>
-                  <td align="center"><?php echo $row->item_id; ?></td>
-                  <td align="center"><?php echo $row->item_name; ?></td>
-                  <td align="center"><?php echo $row->item_mac; ?></td>
-                  <td align="center"><img src="<?php echo base_url().'img_qr/'.$row->item_imgname; ?>" width="50"></td>
-                </tr>
-                <?php } ?>
+                <tbody id="gropitemtb">
                 </tbody>
                 <tfoot>
                 <tr>
@@ -116,6 +107,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tr>
                 </tfoot>
               </table>
+            </div>
+            <div class="overlay" id="loadoverlaytable">
+              <i class="fa fa-refresh fa-spin"></i>
             </div>
             <!-- /.box-body -->
           </div>
@@ -173,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h4 class="modal-title">QR Code Scan <i class="fa  fa-video-camera" style="padding-left: 2px;"></i></h4>
               </div>
               <div class="modal-body">
-                <div class="box box-info box-solid">
+                <div class="box box-primary box-solid">
                   <div class="box-header with-border">
                     <h4 style="color: black;">Camera QR Code <i class="fa fa-refresh fa-spin fa-fw" style="margin-right: 2px;"></i></h4>
                   </div>
@@ -205,11 +199,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- FastClick -->
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/fastclick/lib/fastclick.js'; ?>"></script>
 <script type="text/javascript">
-  $('#gropitem').DataTable({
-    "responsive": true,
-    "order":[[1,'desc']],
-    "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]]
-  })
+var table;
+$(document).ready(function() {
+    table = $('#gropitem').DataTable({ 
+        "processing": true, 
+        "serverSide": true, 
+        "responsive": true,
+        "language": {
+                "lengthMenu":"แสดง _MENU_ แถว",
+                "search":"ค้นหา:",
+                "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
+                "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
+                "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
+                "processing": "กำลังโหลดข้อมูล...",
+                "zeroRecords": "ไม่มีข้อมูล",
+                "paginate": {
+                      "first": "หน้าแรก",
+                      "last": "หน้าสุดท้าย",
+                      "next": "ต่อไป",
+                      "previous": "ย้อนกลับ"
+                  },
+        },
+        "order":[[1,'desc']],
+        "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+        "ajax": {
+            "url": "<?php echo site_url('Gencode/ajaxgetitem_all')?>",
+            "type": "POST"
+        },
+        "columnDefs": [
+        { 
+            "targets": [ 0 ], 
+            "orderable": false, 
+        },
+        ],
+ 
+    });
+ 
+});
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <b>Version 0.0.2</b>
 -ใช้งาน QR ค้นหา <br>
 -Table ใช้งาน Ajax <br>
--Alert ข้อมูลแยกUser 
+-Alert ข้อมูลแยกUser <br>
 </tr> 
 <tr>
   <b>Version 0.0.1</b> 

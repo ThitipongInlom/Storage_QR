@@ -18,7 +18,26 @@ class Addtype extends CI_Controller {
 
 	public function Get_itemtype()
 	{
-		$this->Addtype_model->Get_addtype();
+		$list = $this->Addtype_model->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $item) {
+            $no++;
+            $row = array();
+            $row[] = $item->typeitem_id;
+            $row[] = $item->typeitem_data;
+ 
+            $data[] = $row;
+        }
+ 
+        $output = array(
+                        "draw" => $_POST['draw'],
+                        "recordsTotal" => $this->Addtype_model->count_all(),
+                        "recordsFiltered" => $this->Addtype_model->count_filtered(),
+                        "data" => $data,
+                );
+        //output to json format
+        echo json_encode($output);
 	}
 
 	public function Save_Addtype()

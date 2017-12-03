@@ -16,7 +16,7 @@ $("#savetypeadd").click(function() {
       table.ajax.reload();
       $("#savetype").hide();
       $("#loadoverlaytable").hide(); 
-      document.getElementById("typeitem_data").value = "";
+      $("#typeitem_data").val('');
       }
     });
 });

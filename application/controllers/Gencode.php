@@ -40,7 +40,8 @@ class Gencode extends CI_Controller {
         $data = array();
         $no = $_POST['start'];
         foreach ($list as $item) {
-            $img = '<img src="'.base_url().'img_qr/'.$item->item_imgname.'" height="50" width="50">';
+            $img = '<img src="'.base_url().'img_qr/'.$item->item_imgname.'" height="50" width="50">
+            		<button class="btn btn-danger" id="'.$item->item_id.'" itemqr="'.$item->item_imgname.'" onclick="showqrcode(this)" data-toggle="modal" data-target="#Show-QR-Code">QR</button>';
 
             $row = array();
             $row[] = $item->item_id;

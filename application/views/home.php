@@ -69,6 +69,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
        </div>  
+       <div class="row">
+         <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Messages</span>
+              <span class="info-box-number">1,410</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+       </div>
     </section>
   <!-- /.content-wrapper -->
   </div>
@@ -85,31 +99,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/morris.js/morris.min.js'; ?>"></script>
 <script type="text/javascript">
   $(function () {
-        // AREA CHART
     var area = new Morris.Area({
       element: 'revenue-chart',
       resize: true,
       data: [
-        {m: '1 Q1', item1: 2666, item2: 2666},
-        {m: '2 Q2', item1: 2778, item2: 2294},
-        {m: '3 Q3', item1: 4912, item2: 1969},
-        {m: '4 Q4', item1: 3767, item2: 3597},
-        {m: '5 Q1', item1: 6810, item2: 1914},
-        {m: '6 Q2', item1: 5670, item2: 4293},
-        {m: '7 Q3', item1: 4820, item2: 3795},
-        {m: '8 Q4', item1: 15073, item2: 5967},
-        {m: '9 Q1', item1: 10687, item2: 4460},
-        {m: '10 Q2', item1: 8432, item2: 5713}
+        {d: '2560', item1: 2666, item2: 2666},
+        {d: '2561', item1: 2778, item2: 2294},
+        {d: '2562', item1: 4912, item2: 1969},
+        {d: '2563', item1: 3767, item2: 3597},
+        {d: '2564', item1: 6810, item2: 1914},
+        {d: '2565', item1: 5670, item2: 4293},
+        {d: '2566', item1: 4820, item2: 3795},
+        {d: '2567', item1: 15073, item2: 5967},
+        {d: '2568', item1: 10687, item2: 4460},
+        {d: '2569', item1: 8432, item2: 5713}
       ],
-      xkey: 'm',
+      xkey: 'd',
       ykeys: ['item1', 'item2'],
-      labels: ['Item 1', 'Item 2'],
+      labels: ['สินค้าทั้งหมด', 'สินค้าที่เบิก'],
       lineColors: ['#a0d0e0', '#3c8dbc'],
       hideHover: 'auto'
     });
-
-    // Pie charts
-    $('.sparkpie').sparkline('html', {type: 'pie', height: '1.0em'});
   });
 </script>
 </body>

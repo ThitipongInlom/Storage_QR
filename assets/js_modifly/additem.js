@@ -17,14 +17,25 @@ $("#saveiteamadd").click(function() {
 			$("#dis").click();
 			table.ajax.reload();
 			ajax_call();
-			$("#savetype").hide();
+			$("#saveitem").hide();
 			$("#loadoverlaytable").hide(); 
+			$("#nameitem").val('');
+			$("#macitem").val('');
 		}
 	});
 });
 setInterval( function () {
     table.ajax.reload( null, false ); 
 }, 30000 );
+
+var showqrcode = function(btnid) {
+	var id = $(btnid).attr("id");
+	var qr = $(btnid).attr("itemqr");
+	var hdataqr = '<div align="center"><b>QR Code</b></div>';
+	var dataqr = '<div align="center"><img src="img_qr/'+qr+'" height="250" width="250"></div><div align="center">ใช้งานIDในการค้นหา <h4><b>ID:'+id+'</b></h4></div>';
+	$("#Show-QR-Code-body").html(hdataqr+dataqr);
+}
+
 
 
 

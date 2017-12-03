@@ -157,7 +157,7 @@ $(document).ready(function() {
                   },
         },
         "order":[[1,'desc']],
-        "aLengthMenu": [[ 7, 10, 25, -1], [ 7, 10, 25, "ทั้งหมด"]],
+        "aLengthMenu": [[ 5, 10, 25, -1], [ 5, 10, 25, "ทั้งหมด"]],
         "ajax": {
             "url": "<?php echo site_url('Addtype/Get_itemtype')?>",
             "type": "POST"

@@ -109,7 +109,8 @@ class Generate_model extends CI_Model {
 		$newid  = md5($id);
 		$rename = $newid.'.png';
 		$data = array(
-        'item_imgname' => $rename);
+        'item_imgname' => $rename,
+    	'item_id_qr'   => $newid);
 		$this->db->where('item_id', $id);
 		$this->db->update('item', $data);
 		return;

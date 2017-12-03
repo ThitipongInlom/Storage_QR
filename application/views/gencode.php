@@ -64,18 +64,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-additem">
                 เพิ่มสินค้าแบบเดี่ยว
               </button>
+              <hr style="margin-top: 15px;">
+              <button type="button" class="btn btn-warning" >
+                เพิ่มสินค้าแบบหลายชิ้น
+              </button>
               </div>
             </div>
           </div>
           <div class="box box-primary box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">ค้นหาสินค้า QR Code</h3>
+              <h3 class="box-title">ค้นหาสินค้า</h3>
             </div>
             <div class="box-body">
-              <div align="center">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-qrcode" id="qrcodeopen">
+               <div style="margin-top: 2px;"><h5><b>ค้นหาด้วย QR Code</b></h5></div>
+               <hr style="margin-top: 5px;">
+              <div align="center"><div style="margin-bottom: 20px;">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-qrcode" id="qrcodeopen"">
                 QR Code
-              </button>
+              </button></div></div>
+              <hr style="margin-top: 5px;">
+              <div style="margin-top: 2px;"><h5><b>ค้นหาด้วย ID</b></h5></div>
+              <hr style="margin-top: 5px;">
+              <div class="input-group input-group">
+                <input type="text" class="form-control" placeholder="ค้นหาด้วย ID">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-primary">ค้นหา<i class="fa fa-fw fa-search"></i></button>
+                    </span>
               </div>
             </div>
           </div>
@@ -137,14 +151,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <input type="text" class="form-control" id="nameitem" placeholder="ชื่อสินค้า">
                     </div>
                     <div class="form-group">
-                      <label for="nameitem">ชื่อสินค้า</label>
-                      <input type="text" class="form-control" id="nameitem2" placeholder="ชื่อสินค้า">
+                      <label for="macitem">Mac</label>
+                      <input type="text" class="form-control" id="macitem" placeholder="Mac">
                     </div>
                     </div>
                     <div class="col-md-6 col-xs-6">
                     <div class="form-group">
-                      <label for="macitem">Mac</label>
-                      <input type="text" class="form-control" id="macitem" placeholder="Mac">
+                      <label for="typeitem">ประเภทสินค้า</label>
+                      <input type="text" class="form-control" id="typeitem" placeholder="ประเภทสินค้า">
                     </div>
                   </div>
                 </div>
@@ -179,7 +193,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger pull-left" id="dis" data-dismiss="modal" id="close_qrcode">ยกเลิก</button>
+                <div align="center">
+                <button type="button" class="btn btn-danger" id="dis" data-dismiss="modal" id="close_qrcode">ปิด</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<!-- model Show-QR-Code -->
+<div class="modal fade" id="Show-QR-Code">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-body" id="Show-QR-Code-body-head">
+                <div id="Show-QR-Code-body">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div align="center">
+                <button type="button" class="btn btn-danger" id="dis" data-dismiss="modal" id="close_show_QR_Code">ปิด</button>
+                </div>
               </div>
             </div>
           </div>

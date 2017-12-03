@@ -3,9 +3,9 @@
 <table>
 <tr>  
   <b>Version 0.0.2</b>
--ใช้งาน QR ค้นหา 
--Table ใช้งาน Ajax
--Alert ข้อมูลแยกUser
+-ใช้งาน QR ค้นหา <br>
+-Table ใช้งาน Ajax <br>
+-Alert ข้อมูลแยกUser 
 </tr> 
 <tr>
   <b>Version 0.0.1</b> 

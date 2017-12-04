@@ -23,6 +23,6 @@ $("#savetypeadd").click(function() {
 
 setInterval( function () {
     table.ajax.reload( null, false ); 
-}, 30000 );
+}, 3000);
 
 

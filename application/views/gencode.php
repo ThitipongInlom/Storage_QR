@@ -15,6 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css'; ?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/Ionicons/css/ionicons.min.css'; ?>">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/select2/dist/css/select2.min.css';?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/dist/css/AdminLTE.min.css'; ?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -23,8 +25,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css'; ?>">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css">
-  <!-- Select2 -->
-  <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/select2/dist/css/select2.min.css';?>">
  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -157,8 +157,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="col-md-6 col-xs-6">
                     <div class="form-group">
-                      <label for="typeitem">ประเภทสินค้า</label>
-                      <input type="text" class="form-control" id="typeitem" placeholder="ประเภทสินค้า">
+                    <label>ประเภทสินค้า</label>
+                    <select class="form-control" id="select2" style="width: 100%;">
+                      <option selected="selected">Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
                     </div>
                   </div>
                 </div>
@@ -232,6 +240,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url().'/assets/adminlte/bower_components/fastclick/lib/fastclick.js'; ?>"></script>
 <script type="text/javascript">
 var table;
+$('#select2').select2();
 $(document).ready(function() {
     table = $('#gropitem').DataTable({ 
         "processing": true, 

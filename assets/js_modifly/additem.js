@@ -26,7 +26,7 @@ $("#saveiteamadd").click(function() {
 });
 setInterval( function () {
     table.ajax.reload( null, false ); 
-}, 30000 );
+}, 3000);
 
 var showqrcode = function(btnid) {
 	var id = $(btnid).attr("id");

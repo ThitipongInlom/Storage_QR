@@ -9,7 +9,7 @@ var id_alert = document.getElementById('id_alert').value;
       $("#num_alert").text(New_data.num);
       $("#num_alert2").text(New_data.num);
       $.each(New_data.result,function(K,V){
-        $(".menu").append("<li class='lidata'><a href='raedItem/"+ V.alert_item_id +"'><i class='"+V.alert_icon+" "+V.alert_color+"'></i>"+V.alert_detail+"</a></li>");
+        $(".menu").append("<li class='lidata'><a href='../raedItem/"+ V.alert_item_id +"'><i class='"+V.alert_icon+" "+V.alert_color+"'></i>"+V.alert_detail+"</a></li>");
       }); 
     }
   });
@@ -27,11 +27,11 @@ var ajax_call = function() {
       $(".menu").remove();
       $("#ceremenu").append('<ul class="menu"></ul>');
       $.each(New_data.result,function(K,V){
-        $(".menu").append("<li class='lidata'><a href='raedItem/"+ V.alert_item_id +"'><i class='"+V.alert_icon+" "+V.alert_color+"'></i>"+V.alert_detail+"</a></li>");
+        $(".menu").append("<li class='lidata'><a href='../raedItem/"+ V.alert_item_id +"'><i class='"+V.alert_icon+" "+V.alert_color+"'></i>"+V.alert_detail+"</a></li>");
       }); 
   	}
   });
 };
-var interval = 1000 * 60 * 1; 
+var interval = 1000 * 60 * 0.1; 
 
 	setInterval(ajax_call, interval);

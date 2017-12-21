@@ -243,7 +243,7 @@ var table;
 $('#select2').select2();
 $(document).ready(function() {
     table = $('#gropitem').DataTable({ 
-        "processing": true, 
+        "processing": false, 
         "serverSide": true, 
         "responsive": true,
         "language": {

@@ -138,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 var table;
 $(document).ready(function() {
     table = $('#typeitem').DataTable({ 
-        "processing": true, 
+        "processing": false, 
         "serverSide": true, 
         "responsive": true,
         "language": {

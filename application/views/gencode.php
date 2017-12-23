@@ -26,6 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url().'/assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css'; ?>">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css">
  
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -38,6 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- QR Code CAMARA  -->
   <script src="<?php echo base_url().'/assets/camara/result.js'; ?>"></script>
   <script src="<?php echo base_url().'/assets/camara/instascan.min.js'; ?>"></script>
+
 </head>
 <body>
   <div class="content-wrapper">
@@ -195,7 +197,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                   <div class="box-body" >
                     <div class="embed-responsive embed-responsive-16by9">
-                    <video id="preview" ></video>
+                    <video id="preview" autoplay="autoplay" class="active"></video>
                     </div>
                   </div>
                 </div>

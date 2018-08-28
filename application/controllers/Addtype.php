@@ -17,7 +17,7 @@ class Addtype extends CI_Controller {
 	}
 
 	public function Get_itemtype()
-	{
+	{ 
 		$list = $this->Addtype_model->get_datatables();
         $data = array();
         $no = $_POST['start'];

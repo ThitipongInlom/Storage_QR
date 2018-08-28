@@ -74,19 +74,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="box-body" id="table_loadoverlay">
               <table id="typeitem" class="table table-bordered table-striped table-hover">
                 <thead>
-                <tr>
+                <tr class="bg-primary">
                   <th>ID สินค้า</th>
                   <th>ชื่อสินค้า</th>
                 </tr>
                 </thead>
                 <tbody >
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>ID สินค้า</th>
-                  <th>ชื่อสินค้า</th>
-                </tr>
-                </tfoot>
               </table>
             </div>  
               <div class="overlay" id="loadoverlaytable">
@@ -138,9 +132,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 var table;
 $(document).ready(function() {
     table = $('#typeitem').DataTable({ 
-        "processing": false, 
-        "serverSide": true, 
-        "responsive": true,
+      "processing": true, 
+      "serverSide": true, 
+      "responsive": true,
+    	"lengthChange": false,
+    	"searching": false,         
+    	"ordering": false,
         "language": {
                 "lengthMenu":"แสดง _MENU_ แถว",
                 "search":"ค้นหา:",
@@ -157,7 +154,7 @@ $(document).ready(function() {
                   },
         },
         "order":[[1,'desc']],
-        "aLengthMenu": [[ 5, 10, 25, -1], [ 5, 10, 25, "ทั้งหมด"]],
+        "aLengthMenu": [[ 5], [ 5]],
         "ajax": {
             "url": "<?php echo site_url('Addtype/Get_itemtype')?>",
             "type": "POST"
@@ -168,6 +165,10 @@ $(document).ready(function() {
             "orderable": false, 
         },
         ],
+        "initComplete": function(settings, json) {
+        setTimeout(function(){ $("#loadoverlaytable").fadeOut('3000', function() {
+        }); }, 1000);
+       }
     });
 });
 </script>
